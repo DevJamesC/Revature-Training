@@ -22,12 +22,14 @@ namespace PizzaStore.Client
 
             var startup = new PizzaStore.Client.Startup();
             var user = new User();
-            var store= new Store();
-            var order =startup.CreateOrder(user,store);
+            var store = new Store();
+            var order = startup.CreateOrder(user, store);
             try
             {
-            MainMenu(order);
-            }catch(Exception ex){
+                MainMenu(order);
+            }
+            catch (Exception ex)
+            {
                 System.Console.WriteLine(ex.Message);
             }
 
@@ -36,19 +38,12 @@ namespace PizzaStore.Client
         static void MainMenu(Order cart)
         {
             bool exit = false;
-            
+
             //int numPizza = 0;
             do
             {
                 //display menu options
-                System.Console.WriteLine("Please select an option");
-                System.Console.WriteLine("1 for Cheese Pizza");
-                System.Console.WriteLine("2 for Pepperoni Pizza");
-                System.Console.WriteLine("3 for Hawaiian Pizza");
-                System.Console.WriteLine("4 for Custom Pizza");
-                System.Console.WriteLine("5 to Display Cart");
-                System.Console.WriteLine("6 for Exit");
-                System.Console.WriteLine();
+                Startup.PrintMenu();
 
                 int select;
                 int.TryParse(Console.ReadLine(), out select);
@@ -67,7 +62,7 @@ namespace PizzaStore.Client
 
                     case 3:
 
-                        SelectOption("Hawaiian", cart, "L", "Stuffed", new List<string> { "Pineapples","Ham" });
+                        SelectOption("Hawaiian", cart, "L", "Stuffed", new List<string> { "Pineapples", "Ham" });
                         break;
 
                     case 4:
@@ -80,8 +75,14 @@ namespace PizzaStore.Client
                         break;
 
                     case 6:
+                        var fmw = new FileManager();
+                        fmw.Write(cart);
                         System.Console.WriteLine("Thank you, Goodbye");
                         exit = true;
+                        break;
+                    case 7:
+                        var fmr = new FileManager();
+                        cart=fmr.Read();
                         break;
                 }
 
@@ -96,7 +97,7 @@ namespace PizzaStore.Client
         static void SelectOption(string option, Order cart, string size, string crust, List<string> toppings)
         {
             cart.CreatePizza(size, crust, toppings);
-            
+
             System.Console.WriteLine($"{option} Pizza Added");
         }
 
@@ -107,6 +108,6 @@ namespace PizzaStore.Client
                 System.Console.WriteLine(pizza.ToString());
             }
         }
-        
+
     }//end Program
 }//end namespace

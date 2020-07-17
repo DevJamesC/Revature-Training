@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Order xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Pizzas>
+    <Pizza>
+      <GetToppings>
+        <string>Pineapples</string>
+        <string>Ham</string>
+      </GetToppings>
+      <SizeP>L</SizeP>
+      <CrustP>Stuffed</CrustP>
+    </Pizza>
+    <Pizza>
+      <GetToppings>
+        <string>It's a Mystery</string>
+        <string>Might be History</string>
+      </GetToppings>
+      <SizeP>L</SizeP>
+      <CrustP>Stuffed</CrustP>
+    </Pizza>
+  </Pizzas>
+</Order>

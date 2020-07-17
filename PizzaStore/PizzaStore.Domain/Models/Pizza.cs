@@ -6,18 +6,24 @@ namespace PizzaStore.Domain.Models
     {
         //STATE
         //fields (camelCasing)
-        string imageUrl = "";
+        private readonly string imageUrl = "";
+
+        private static string _name = "pizza";
         double diameter = 0;
         //string Size = "";
-         List<string> Toppings = new List<string>();
-        public List<string> GetToppings(){
-             return Toppings;
-         }
+        List<string> Toppings = new List<string>();
+        public List<string> GetToppings
+        {
+            get
+            {
+                return Toppings;
+            }
+        }
 
         // string Crust = "";
         //properties (PascelCasing)
-         public string SizeP { get;}
-        public string CrustP {get;}
+        public string SizeP { get; set; }
+        public string CrustP { get; set; }
 
 
         //BEHAVIOR
@@ -43,6 +49,11 @@ namespace PizzaStore.Domain.Models
             SizeP = _size;
             CrustP = _crust;
             Toppings.AddRange(_toppings);
+        }
+
+        public Pizza()
+        {
+
         }
         //finalizers or destructors
     }

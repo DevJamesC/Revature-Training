@@ -3,8 +3,7 @@
   <Pizzas>
     <Pizza>
       <GetToppings>
-        <string>Pineapples</string>
-        <string>Ham</string>
+        <string>Cheese</string>
       </GetToppings>
       <SizeP>L</SizeP>
       <CrustP>Stuffed</CrustP>
@@ -13,6 +12,13 @@
       <GetToppings>
         <string>It's a Mystery</string>
         <string>Might be History</string>
+      </GetToppings>
+      <SizeP>L</SizeP>
+      <CrustP>Stuffed</CrustP>
+    </Pizza>
+    <Pizza>
+      <GetToppings>
+        <string>Pepperoni</string>
       </GetToppings>
       <SizeP>L</SizeP>
       <CrustP>Stuffed</CrustP>

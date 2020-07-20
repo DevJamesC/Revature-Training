@@ -40,7 +40,8 @@ namespace PizzaStore.Domain.Models
             {
                 sb.Append($"{top}, ");
             }
-            sb.Remove(sb.Length - 2, 1);
+            sb.Remove(sb.Length - 2, 2); 
+            
             return $"Size: \"{SizeP}\" Crust: \"{CrustP}\" Toppings: \"{sb.ToString()}\"";
         }
         //constructors
@@ -53,7 +54,7 @@ namespace PizzaStore.Domain.Models
 
         public Pizza()
         {
-
+ 
         }
         //finalizers or destructors
     }
